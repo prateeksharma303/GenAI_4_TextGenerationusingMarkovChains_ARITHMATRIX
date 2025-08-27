@@ -1,7 +1,6 @@
 import random
 import os
-text = "I love learning AI and machine learning. AI is the future. AI will change the world. Machine learning is fun and powerful."
-words = text.split()
+text = "Early in the morning the curious fox ran swiftly across the quiet meadow chasing butterflies and birds while the golden sunlight danced on the leaves.
 markov_chain = {}
 for i in range(len(words) - 1):
     word = words[i]
@@ -23,6 +22,6 @@ start_words = ["AI", "Machine", "I", "learning", "future"]
 for i in range(20):
     start = random.choice(start_words)
     text_out = generate_text(start, 10)
-    with open(f"generated_samples/sample{i+1}.txt", "w") as f:
-        f.write(text_out)
-print("✅ 20 samples saved inside 'generated_samples/' folder")
+    f = open(f"generated_samples/sample{i+1}", "w")
+    f.write(text_out)
+print("20 samples saved inside 'generated_samples/' ")
