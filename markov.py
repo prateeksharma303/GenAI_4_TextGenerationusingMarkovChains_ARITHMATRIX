@@ -10,7 +10,7 @@ for i in range(len(words) - 1):
 def generate_text(start_word, length=10):
     word = start_word
     output = [word]
-    for _ in range(length - 1):
+    for i in range(length - 1):
         if word not in markov_chain:
             break
         word = random.choice(markov_chain[word])
@@ -18,7 +18,7 @@ def generate_text(start_word, length=10):
     return " ".join(output)
 
 os.makedirs("generated_samples", exist_ok=True)
-start_words = ["AI", "Machine", "I", "learning", "future"]
+start_words = words.copy()
 for i in range(20):
     start = random.choice(start_words)
     text_out = generate_text(start, 10)
