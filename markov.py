@@ -1,18 +1,13 @@
 import random
 import os
-
-# Example text corpus
 text = "I love learning AI and machine learning. AI is the future. AI will change the world. Machine learning is fun and powerful."
 words = text.split()
-
-# Build Markov chain dictionary
 markov_chain = {}
 for i in range(len(words) - 1):
     word = words[i]
     next_word = words[i + 1]
     markov_chain.setdefault(word, []).append(next_word)
-
-# Text generator
+    
 def generate_text(start_word, length=10):
     word = start_word
     output = [word]
@@ -23,15 +18,11 @@ def generate_text(start_word, length=10):
         output.append(word)
     return " ".join(output)
 
-# Create folder for outputs
 os.makedirs("generated_samples", exist_ok=True)
-
-# Generate and save 20 samples
 start_words = ["AI", "Machine", "I", "learning", "future"]
 for i in range(20):
     start = random.choice(start_words)
     text_out = generate_text(start, 10)
     with open(f"generated_samples/sample{i+1}.txt", "w") as f:
         f.write(text_out)
-
 print("✅ 20 samples saved inside 'generated_samples/' folder")
