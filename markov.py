@@ -1,6 +1,6 @@
 import random
 import os
-text = "Early in the morning the curious fox ran swiftly across the quiet meadow chasing butterflies and birds while the golden sunlight danced on the leaves.
+text = "Early in the morning the curious fox ran swiftly across the quiet meadow chasing butterflies and birds while the golden sunlight"
 markov_chain = {}
 for i in range(len(words) - 1):
     word = words[i]
